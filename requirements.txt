@@ -1,0 +1,7 @@
+torch
+pillow
+huggingface_hub
+torchvision 
+numpy
+tqdm
+json
