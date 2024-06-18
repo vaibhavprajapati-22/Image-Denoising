@@ -7,6 +7,9 @@ the visual quality and performance of subsequent image analysis tasks.
 
 This project investigates three image denoising models: Autoencoder, CBDNet, and RIDNet. Trained on standard datasets and evaluated using PSNR, the project explores their effectiveness in removing noise and improving image quality.
 
+
+To view the project report,[Click Here](https://github.com/user-attachments/files/15887289/Image_Denoising.pdf).
+
 ## Table of Contents :bar_chart:
 - Requirements
 - Datasets Used
@@ -14,6 +17,7 @@ This project investigates three image denoising models: Autoencoder, CBDNet, and
 - Models Architecture
 - Model Training and Hyperparameters
 - Model Evaluation
+- How To Run
 - Improvements
 - References
 
@@ -120,7 +124,12 @@ for epoch in range(epochs):
     print(f"{epoch+1} / {epochs} Runnung Training loss : {loss_e}")
     print(f"Training loss : {train_loss:.4f} Training PSNR : {train_psnr:.4f} Validation Loss : {val_loss:.4f} Validation PSNR : {val_psnr:.4f}")
 ```
- ### Training PSNR :
+### Model weights 
+Download weights and config files form hugging face :
+[Autoencoder](https://huggingface.co/vaibhavprajapati22/Image_Denoising_Autoencoder)
+[CBDNet](https://huggingface.co/vaibhavprajapati22/Image_Denoising_CBDNet)
+[RIDNet](https://huggingface.co/vaibhavprajapati22/Image_Denoising_RIDNet)
+### Training PSNR :
   - Autoencoder : 16.4439
   -  CBDNet : 35.2989
   -  RIDNet : 26.6179
@@ -136,6 +145,32 @@ for epoch in range(epochs):
   - Autoencoder : 0.594
   - CBDNet : 0.789
   - RIDNet : 0.746
+
+### Testing On Some Images :
+![image](https://github.com/vaibhavprajapati-22/Image-Denoising/assets/148644657/84f76c61-43d8-4af8-8c87-9604b907276b)
+
+## How To Run :gun:
+  1. Clone the repository:
+    <pre>
+    <code class="python">
+    git clone https://github.com/vaibhavprajapati-22/Image-Denoising
+    </code>
+    </pre>
+  2. Install the required dependencies:
+     <pre>
+      <code class="python">
+        cd Image-Denoising
+        pip install -r requirements.txt
+      </code>
+     </pre>
+  3. Run main script
+     <pre>
+      <code class="python">
+        python main.py
+      </code>
+     </pre>
+
+After running the main.py file images in test/low will be read and correspoing outputs will be stored in test/predicted. Make sure that images are in png format.
 
 ## Improvements :mag_right:
   - Increase Computational Resources: Utilize platforms with longer session limits or more powerful GPUs for more extensive training, particularly benefiting CBDNet.
